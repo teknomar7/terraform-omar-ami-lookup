@@ -1,0 +1,30 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tflint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Clone Repository
+    
+    - uses: actions/cache@v2
+      name: Cache plugin dir
+      with:
+        path: ~/.tflint.d/plugins
+        key: tflint-${{ hashfiles('.tflint.hcl') }}
+
+    - uses: terraform-linters/setup-tflint@v2
+      name: Install TFLint
+    
+    - name: Show Version
+      run: tflint --version
+    
+    - name: Install Plugins
+      run: tflint --init
+    
+    - name: Run TFLint
+      run: tflint -f compact
