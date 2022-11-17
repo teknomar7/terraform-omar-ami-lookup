@@ -2,7 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-data "aws_ami" "windows-2019" {
+data "aws_ami" "windows_2019" {
   most_recent = true
   owners      = ["amazon"]
   filter {
