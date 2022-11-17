@@ -1,6 +1,5 @@
 # terraform-omar-ami-lookup
 
-Some content
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
