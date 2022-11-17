@@ -36,3 +36,13 @@ jobs:
       uses: actions/checkout@v2
     - name: tfsec
       uses: aquasecurity/tfsec-action@v1.0.2
+
+  terraform-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v2
+    - name: Validate README with terraform-docs
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        fail-on-diff: true
