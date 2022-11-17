@@ -28,3 +28,11 @@ jobs:
     
     - name: Run TFLint
       run: tflint -f compact
+
+  tfsec:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v2
+    - name: tfsec
+      uses: aquasecurity/tfsec-action@v1.0.2
