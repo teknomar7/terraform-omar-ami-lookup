@@ -1,1 +1,1 @@
-# ami-image-module
+# terraform-omar-ami-lookup
