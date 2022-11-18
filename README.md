@@ -1,5 +1,7 @@
 # terraform-omar-ami-lookup
 
+PoC repo for Terraform that looks up an AMI and runs tests with Github actions.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
