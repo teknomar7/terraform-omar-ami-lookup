@@ -22,8 +22,8 @@ func TestTerraformHelloWorldExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Run `terraform output` to get the values of output variables and check they have the expected values.
-	w_output := terraform.Output(t, terraformOptions, "windows_2019_ami_id")
-	assert.Contains(t, w_output, "ami-")
-	u_output := terraform.Output(t, terraformOptions, "ubuntu_20_04_ami_id")
-	assert.Contains(t, u_output, "ami-")
+	wOutput := terraform.Output(t, terraformOptions, "windows_2019_ami_id")
+	assert.Contains(t, wOutput, "ami-")
+	uOutput := terraform.Output(t, terraformOptions, "ubuntu_20_04_ami_id")
+	assert.Contains(t, uOutput, "ami-")
 }
